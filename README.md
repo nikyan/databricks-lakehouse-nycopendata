@@ -102,5 +102,7 @@ Delta tables are designed to scale with data and users. It has number of feature
 More details available here:
 https://caserta.com/data-blog/databricks-delta/
 
+### References
 
+https://github.com/databricks/tech-talks 
 
