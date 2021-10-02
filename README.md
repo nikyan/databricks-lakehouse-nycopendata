@@ -1,5 +1,4 @@
 # Delta Architecture: Poc using NYC Open Data
-## Udacity: Data Engineering Capstone Project
 
 ## Summary
 This project is focused on evaluating delta architecture and how continuous data flow model can be used in practice. In the current POC, I have created processed and analytics delta table. The analytics table can be leveraged by data scientist/business analyst for further analysis.
