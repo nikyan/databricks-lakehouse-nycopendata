@@ -19,7 +19,7 @@
 
 # COMMAND ----------
 
-#dbutils.widgets.removeAll()
+dbutils.widgets.removeAll()
 
 # COMMAND ----------
 
@@ -233,7 +233,7 @@ LOCATION "{taxi_data}/dim_location"
 
 processed_taxi_df = (spark.read
                      .format("delta")
-                     .load(file_path + "/processed"))
+                     .load(taxi_data + "/processed"))
 
 # COMMAND ----------
 
@@ -257,7 +257,7 @@ taxi_df.head(1)
 
 dim_location = (spark.read
                      .format("delta")
-                     .load(file_path + "/dim_location"))
+                     .load(taxi_data + "/dim_location"))
 
 # COMMAND ----------
 
@@ -313,5 +313,14 @@ LOCATION "{taxi_data}/taxi_analytics"
 
 (spark.read
  .format("delta")
- .load(file_path + "taxi_analytics")
+ .load(taxi_data + "taxi_analytics")
  .display())
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC 
+# MAGIC Future Considerations:
+# MAGIC 
+# MAGIC  - Create a Notebook for batch processing
+# MAGIC  - Use object store for storing data (S3 or ADL)
