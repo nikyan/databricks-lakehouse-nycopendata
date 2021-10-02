@@ -51,10 +51,29 @@ https://github.com/nikyan/databricks-lakehouse-nycopendata/blob/main/Data_Dictio
 
 
 ## Step 3: Define Data Model
+Since the end purpose of the ETL pipeline is to support Machine Learning use case, it's more useful to have one fact table so that data scientists can easily create their models without having to do any complex joins.
 
+The taxi trip data is joined with location dimension table to provide full view of the trip data which can used for number of ML use cases.
 
 ## Step 4: ETL Notebook
 
+### ETL Pipeline
+
+The ETL Notebook is a Databricks Notebook. It's exported as a Jupyter Notebook in the repo here:
+https://github.com/nikyan/databricks-lakehouse-nycopendata/blob/main/ETL%20Process%20and%20Data%20Exploration.ipynb
+
+The Notebook follows the following steps:
+1. Parametrize Notebook: Use widgets to parameterize notebooks. Makes it easy to execute using different variables.
+2. Import dependencies. This includes configuration file and utilities notebook.
+3. Read data from the API.
+4. Perform data quality checks.
+5. Create a Delta table to store raw data from API.
+6. Enforce schema
+7. Join fact and dimension tables and create an analytics delta table.
+
+### Folder Structure
+
+-- ETL Process and Data Exploration
 
 ## Step 5: Conclusion
 
@@ -67,6 +86,8 @@ https://github.com/nikyan/databricks-lakehouse-nycopendata/blob/main/Data_Dictio
 - After first time creation of delta tables, the batch job should run in append-only mode.
 
 ### Future Design Considerations
+
+The Notebook needs to be optmized for batch processing.
 
 1. The data was increased by 100x.
 Databricks is PAS service that can be easily scaled horizontally. It allows for setup of min and max nodes in the cluster with auto-scale feature. Databricks is available in all major cloud platforms.
