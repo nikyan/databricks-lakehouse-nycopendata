@@ -19,7 +19,7 @@ spark.sql(f"USE nycopendata")
 
 # COMMAND ----------
 
-app_token = 'rWjClpvZRgli4YuSk9xnnm56D'
+app_token = ''
 
 # COMMAND ----------
 
