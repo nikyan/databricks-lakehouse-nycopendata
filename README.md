@@ -73,7 +73,9 @@ The Notebook follows the following steps:
 
 ### Folder Structure
 
--- ETL Process and Data Exploration
+-- ETL Process and Data Exploration.py
+-- configuration.py (store API keys, location etc)
+-- utilities.py (functions used in ETL)
 
 ## Step 5: Conclusion
 
